@@ -7,7 +7,7 @@ part "todos_event.dart";
 part "todos_state.dart";
 
 class TodosBloc extends Bloc<TodosEvent, TodosState> {
-  TodosBloc() : super(TodosInitial()) {
+  TodosBloc() : super(TodosLoading()) {
     on<TodosEvent>((event, emit) {});
   }
 }
