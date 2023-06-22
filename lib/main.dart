@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testtest/blocs/todos/todos_bloc.dart';
 import 'package:testtest/screens/home_screen.dart';
 
+import 'blocs/todos_filter/todos_filter_bloc.dart';
 import 'models/todos_model.dart';
 
 void main() {
@@ -32,7 +33,10 @@ class MyApp extends StatelessWidget {
                     id: '3',
                     task: 'Eat your 2nd meal',
                     description: 'Eat nehari! Yummmmmm')
-              ])))
+              ]))),
+        BlocProvider(
+            create: (context) =>
+                TodosFilterBloc(todosBloc: BlocProvider.of<TodosBloc>(context)))
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
